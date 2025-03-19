@@ -1,47 +1,33 @@
-# IoT-Based-Health-Monitoring-System-using-Arduino
-## Abstract
-The IoT-based health monitoring system is an innovative solution aimed at remotely tracking patient vitals such as heart rate and body temperature using Arduino and IoT technologies. The data collected is transmitted wirelessly via the ESP8266 WiFi module and displayed on a cloud platform like ThingSpeak or Blynk. This system allows healthcare professionals to monitor patient health in real-time, improving response times and reducing the burden on hospitals.
+# IoT-Based Health Monitoring System using Arduino
 
-## Introduction
-Healthcare monitoring is critical in today’s fast-paced world. This project presents a cost-effective and real-time health monitoring solution using Arduino and IoT. It leverages sensors to measure vital parameters and uploads the data to an IoT platform for continuous monitoring.
+## Overview
+A real-time IoT-based health monitoring system using Arduino UNO, DHT11 temperature sensor, pulse sensor, and ESP8266 WiFi module. It sends patient vitals (temperature, humidity, and heart rate) to ThingSpeak for remote monitoring.
 
-## Components Required
-- Arduino UNO  
-- Heartbeat Sensor (Pulse Sensor)  
-- Temperature Sensor (LM35 or DHT11)  
-- ESP8266 WiFi Module (ESP-01)  
-- LCD Display (16x2) with I2C module  
-- Breadboard and Jumper Wires  
-- Power Supply  
+## Components Used
+- Arduino UNO
+- DHT11 Temperature & Humidity Sensor
+- Pulse Sensor
+- ESP8266 WiFi Module (ESP-01)
+- Breadboard and Jumper Wires
 
-## Block Diagram Description
-The system comprises sensors connected to the Arduino UNO, which reads and processes the data. The data is displayed locally on an LCD and also transmitted via the ESP8266 module to an online IoT platform.
+## How It Works
+1. Sensors collect temperature, humidity, and heart rate.
+2. Arduino processes the sensor data.
+3. ESP8266 sends the data to ThingSpeak cloud platform.
+4. Real-time monitoring is done remotely via internet.
 
-## Circuit Description
-- The heartbeat sensor is connected to analog pin A0 of the Arduino.  
-- The LM35/DHT11 temperature sensor is connected to another analog/digital pin.  
-- The ESP8266 is connected via the serial interface (TX/RX).  
-- The LCD display is connected using I2C interface for efficient data display.
+## Output Example
+| Parameter     | Value    |
+|---------------|----------|
+| Temperature   | 29 °C    |
+| Humidity      | 52%      |
+| Heart Rate    | 85 bpm   |
 
-## Working Principle
-The Arduino reads analog values from the heartbeat and temperature sensors, processes them, and sends the data via the ESP8266 WiFi module. The data is uploaded to a cloud platform like ThingSpeak or Blynk, allowing doctors to view it remotely.
+## Project Structure
 
-## Sample Arduino Code Snippet
-```cpp
-// Reading temperature from DHT11
-#include <DHT.h>
-#define DHTPIN 2
-#define DHTTYPE DHT11
-DHT dht(DHTPIN, DHTTYPE);
+## IoT Platform Used
+- [ThingSpeak](https://thingspeak.com/)
 
-void setup() {
-  Serial.begin(9600);
-  dht.begin();
-}
-
-void loop() {
-  float temp = dht.readTemperature();
-  Serial.println(temp);
-  delay(2000);
-}
-
+## Author
+Hussain – Biomedical Engineering Student  
+[LinkedIn](https://www.linkedin.com/in/hussain-s-6b2850241/)
